@@ -49,3 +49,7 @@ $routes->get('/', 'Home::index');
 if (file_exists(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php')) {
     require APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php';
 }
+
+$routes->get('news/(:segment)', 'News::view/$1');
+$routes->get('news', 'News::index');
+$routes->get('(:any)', 'Pages::view/$1');
